@@ -1,19 +1,7 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    ft_filter.py                                       :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: mshereme <mshereme@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/12/24 15:58:17 by mshereme          #+#    #+#              #
-#    Updated: 2024/12/24 15:58:20 by mshereme         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-import sys
-
-def main(): 
-    print("test")
-
-if __name__ == "__main__" :
-    main()
+def ft_filter(func, iterable):
+    """ft_filter(function or None, iterable) --> filter object
+Return an iterator yielding those items of iterable for which function(item)
+is true. If function is None, return the items that are true."""
+    if func:
+        return (x for x in iterable if func(x))
+    return (x for x in iterable if func(x))
