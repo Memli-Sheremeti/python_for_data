@@ -7,7 +7,7 @@ def ft_parse(object: any):
     try:
         int(object[2])
     except ValueError:
-        raise AssertionError("argument is not an integer")
+        raise AssertionError("the arguments are bad")
     return
 
 
@@ -21,8 +21,9 @@ def main():
         ft_parse(sys.argv)
     except AssertionError as e:
         print("AssertionError:", e)
-    test = ft_filterstring(sys.argv)
-    print(test)
+        return
+    data_list = ft_filterstring(sys.argv)
+    print(data_list)
 
 
 if __name__ == "__main__":
