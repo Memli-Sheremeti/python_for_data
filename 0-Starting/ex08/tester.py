@@ -9,6 +9,8 @@ from tqdm import tqdm
 #     print()
 
 
+# print(tqdm.__doc__)
 for elem in tqdm(range(333)):
-    sleep(0.005)
-print()
+    # print(elem)
+    sleep(0.5)
+# print()
