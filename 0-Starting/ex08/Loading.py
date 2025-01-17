@@ -1,6 +1,5 @@
 import sys
 from time import sleep
-from tqdm import tqdm
 
 
 def ft_tqdm(lst: range) -> None:
@@ -10,7 +9,7 @@ def ft_tqdm(lst: range) -> None:
     sys.stdout.flush()
     print(iter(lst))
     sleep(0.05)
-    return 
+    return
 
 
 def main():
