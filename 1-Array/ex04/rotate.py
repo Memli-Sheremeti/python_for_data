@@ -2,12 +2,22 @@ import numpy as np
 from PIL import Image
 
 
-def ft_zoom(path: str) -> np.array:
+def rotateMatrix(arr) -> np.array:
+    n = len(arr)
+    rotate_arr = np.array(arr)
+    for i in range(n):
+        for j in range(n):
+            rotate_arr[n - j - 1][i] = arr[i][j]
+    return rotate_arr
+
+
+def ft_rotate(path: str) -> np.array:
     try:
         img = Image.open(path)
         gray_img = img.convert("L")
         arr = np.array(gray_img)
         new_img = arr[200:600, 400:800]
+        new_img = rotateMatrix(new_img)
         new_img = new_img[:, :, np.newaxis]
         print("New shape after slicing:", new_img.shape)
         img.close()
@@ -18,8 +28,8 @@ def ft_zoom(path: str) -> np.array:
 
 
 def main():
-    (ft_zoom("animal.jpeg"))
-    print(ft_zoom("caca"))
+    print(ft_rotate("animal.jpeg"))
+    print(ft_rotate("caca"))
     return
 
 
