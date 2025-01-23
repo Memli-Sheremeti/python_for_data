@@ -6,11 +6,11 @@
 #    By: mshereme <mshereme@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/09 17:57:48 by mshereme          #+#    #+#              #
-#    Updated: 2025/01/09 19:27:03 by mshereme         ###   ########.fr        #
+#    Updated: 2025/01/10 17:28:31 by mshereme         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-from NUL_not_found import NULL_not_found
+from NULL_not_found import NULL_not_found
 
 def main():
     Nothing = None
