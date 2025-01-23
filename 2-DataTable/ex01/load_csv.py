@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 
 def load(path: str) -> pd.DataFrame:
@@ -10,6 +9,7 @@ def load(path: str) -> pd.DataFrame:
         print("Exception: error with ", path)
         return None
     return df
+
 
 def main():
     print(load("life_expectancy_years.csv"))
