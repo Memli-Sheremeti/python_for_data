@@ -3,6 +3,8 @@ from ft_filter import ft_filter
 
 
 def ft_parse(object: any):
+    """ Parse the input of the user.
+    Only 2 arguments: String and Int """
     assert len(object) == 3, "the arguments are bad"
     try:
         int(object[2])
@@ -12,6 +14,8 @@ def ft_parse(object: any):
 
 
 def ft_filterstring(object: any):
+    """ Filters words from the string in object[1]
+    that have length >= int(object[2])"""
     str_split = object[1].split()
     return list(ft_filter(lambda a: len(a) >= int(object[2]), str_split))
 

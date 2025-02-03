@@ -1,7 +1,7 @@
 import sys
 
 
-def oven_or_odd(object: any):
+def oven_or_odd(object: any) -> None:
     assert len(object) == 2, "more than one argument is provided"
     try:
         int(object[1])
@@ -12,6 +12,7 @@ def oven_or_odd(object: any):
         print("I'm Even.")
     else:
         print("I'm Odd.")
+    return
 
 
 def main():

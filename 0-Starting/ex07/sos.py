@@ -2,6 +2,7 @@ import sys
 
 
 def ft_parse(object: any):
+    """ Parse and process the input provided by the user. """
     assert len(object) == 2, "the arguments are bad"
     parser = object[1].replace(" ", "")
     assert parser.isalnum(), "the arguments are not only alnum"
@@ -9,6 +10,7 @@ def ft_parse(object: any):
 
 
 def ft_morse_code_output(message, dict):
+    """ Translate the strnig in morse code """
     for i in message[:-1]:
         print(dict[i], end=" ")
     for x in message[-1:]:
