@@ -2,21 +2,24 @@ import numpy as np
 
 
 def parsing_list(family: list):
+    """ PARSE IF THE INUPT IS A LIST"""
     if type(family) is not list:
-        raise ValueError
+        raise ValueError("Not a list")
     return
 
 
 def slice_me(family: list, start: int, end: int) -> list:
+    """Parameters 2D array: list - an start: int and a end: int.
+    Slicing method use for returning a truncated version"""
     try:
         parsing_list(family)
         family_slice = np.array(family)
-    except ValueError:
-        print("ValueError: Not the same number of elements")
+        print("My shape is :", family_slice.shape)
+        print("My name shape is :", family_slice[start:end].shape)
+        return family_slice[start:end].tolist()
+    except ValueError as e:
+        print(f"ValueError: {e}")
         return
-    print("My shape is: ", family_slice.shape)
-    print("My name shape is: ", family_slice[start:end].shape)
-    return family_slice[start:end].tolist()
 
 
 def main():
@@ -26,6 +29,7 @@ def main():
               [1.88, 75.2]]
     slice_me(family, 0, 2)
     slice_me(family, 1, -2)
+    print(slice_me(family, 0, 4))
     return
 
 

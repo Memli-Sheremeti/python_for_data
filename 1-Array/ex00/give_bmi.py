@@ -16,8 +16,8 @@ def parsing_list(height: list[int | float], weight: list[int | float]) -> bool:
     Raises:
         If lists contain non-numeric values or have different lengths.
     """
-    if (all((type(h) is int or type(h) is float) for h in height) is False or
-            all(type(w) is int or type(w) is float for w in weight) is False):
+    if (all(isinstance(h, (int, float)) for h in height) is False or
+            all(isinstance(w, (int, float)) for w in weight) is False):
         raise Exception("Not int or float in the list")
     elif len(height) != len(weight):
         raise Exception("Not the same length")
@@ -38,7 +38,8 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     return (np.array(bmi) > limit).tolist()
 
 
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+def give_bmi(height: list[int | float],
+             weight: list[int | float]) -> list[int | float]:
     """
     Calculates the BMI for each pair of height and weight.
 
@@ -54,11 +55,11 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
     """
     try:
         parsing_list(height, weight)
+        array_height = np.square(np.array(height))
+        bmi = np.array(weight) / array_height
     except Exception as e:
         print("Exception: ", e)
         return
-    array_height = np.square(np.array(height))
-    bmi = np.array(weight) / array_height
     return bmi.tolist()
 
 

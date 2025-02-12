@@ -1,25 +1,24 @@
+from load_image import ft_load
 import numpy as np
 from PIL import Image
 
 
 def ft_zoom(path: str) -> np.array:
     try:
-        img = Image.open(path)
-        gray_img = img.convert("L")
-        arr = np.array(gray_img)
-        new_img = arr[200:600, 400:800]
-        new_img = new_img[:, :, np.newaxis]
-        print("New shape after slicing:", new_img.shape)
-        img.close()
-    except Exception:
-        print("Exception with the path:", path)
+        object = ft_load(path)
+        print(object)
+        object = object[200:600, 400:800]
+        object = object[:, :, 0]
+        print("New shape after slicing:", object.shape)
+        print(object)
+        return object
+    except Exception as e:
+        print(f"Exception: {e}")
         return
-    return new_img
 
 
 def main():
-    (ft_zoom("animal.jpeg"))
-    print(ft_zoom("caca"))
+    ft_zoom("animal.jpeg")
     return
 
 
